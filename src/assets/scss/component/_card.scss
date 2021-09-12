@@ -1,14 +1,45 @@
 .c-identityCard {
-    box-sizing: border-box;
-    width: 150px;
-    height: 150px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #d9dae4;
-    border-radius: 4px;
+    position: relative;
+
+    &__inp {
+        position: absolute;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__lbl {
+        box-sizing: border-box;
+        width: 150px;
+        height: 150px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        border: 1px solid #d9dae4;
+
+        &::after {
+            content: none;
+            position: absolute;
+            right: -12px;
+            bottom: -12px;
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: url("./assets/image/icon/check.svg") no-repeat center center;
+            background-color: #38b5ed;
+        }
+    } 
+
+    &__inp:checked + &__lbl{
+        border: 1px solid #38b5ed;
+        &::after {
+            content: "";
+        }
+    }    
 
     &__kv {
         width: 90px;
@@ -28,29 +59,12 @@
     &__tit {
         color: #6a707c;
     }
-
-    &.is-check {
-        position: relative;
-        border: 1px solid #38b5ed;
-
-        &::after {
-            content: '';
-            position: absolute;
-            right: -12px;
-            bottom: -12px;
-            display: block;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: url("./assets/image/icon/check.svg") no-repeat center center;
-            background-color: #38b5ed;
-        }
-    }
 }
 
 .l-identityCard {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 -16px;
 
     &__item {
