@@ -1,0 +1,75 @@
+input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #d9dae4;
+
+    &:focus {
+        border: 1px solid #38b5ed;
+    }
+}
+
+.c-icobox {
+    position: relative;
+
+    &__ico {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 98;
+    }
+
+    &__inp {
+        padding-left: 44px;
+    }
+
+    &__lbl {
+        display: none;
+        box-sizing: border-box;
+        position: absolute;
+        top: -12px;
+        left: 16px;
+        padding: 1px 4px;
+        font-size: 4px;
+        color: #fff;
+        text-align: center;
+        background: #38b5ed;
+        border-radius: 4px;
+        z-index: 99;
+    }
+
+    &__inp:focus + &__lbl{
+        display: block;
+    }
+
+    &--email & {
+        &__ico {
+            background-image: url("./assets/image/icon/email.svg");
+        }
+    }
+
+    &--lock & {
+        &__ico {
+            background-image: url("./assets/image/icon/lock.svg");
+        }
+    }
+}
+
+.l-form {
+    &__row {
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+    }
+}
